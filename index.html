@@ -1,0 +1,73 @@
+<!DOCTYPE html5>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style type="text/css"> </style>
+    <script defer src="synth.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1> synth </h1>
+      <div class="keyboard"></div>
+    </div>
+
+    <div class="settingsBar">
+      <div class="left">
+        <span>Volume: </span>
+        <input type="range" min="0.0" max="1.0" step="0.01" value="0.5"
+               list="volumes" name="volume"
+               onchange="setVolume()">
+        <datalist id="volumes">
+          <option value="0.0" label="Mute">
+          <option value="1.0" label="100%">
+        </datalist>
+      </div>
+      <div class="right">
+        <span>Current waveform: </span>
+        <select name="waveform">
+          <option value="sine">Sine</option>
+          <option value="square" selected>Square</option>
+          <option value="sawtooth">Sawtooth</option>
+          <option value="triangle">Triangle</option>
+          <!-- <option value="custom">Custom</option> -->
+        </select>
+      </div>
+    </div>
+
+    <div>
+      Major scale:
+      <button onclick="majorScale(0)">A</button>
+      <button onclick="majorScale(1)">A#</button>
+      <button onclick="majorScale(2)">B</button>
+      <button onclick="majorScale(3)">C</button>
+      <button onclick="majorScale(4)">C#</button>
+      <button onclick="majorScale(5)">D</button>
+      <button onclick="majorScale(6)">D#</button>
+      <button onclick="majorScale(7)">E</button>
+      <button onclick="majorScale(8)">F</button>
+      <button onclick="majorScale(9)">F#</button>
+      <button onclick="majorScale(10)">G</button>
+      <button onclick="majorScale(11)">G#</button>
+      <button onclick="majorScale(12)">A</button>
+    </div>
+    <div>
+      Minor scale:
+      <button onclick="minorScale(0)">A</button>
+      <button onclick="minorScale(1)">A#</button>
+      <button onclick="minorScale(2)">B</button>
+      <button onclick="minorScale(3)">C</button>
+      <button onclick="minorScale(4)">C#</button>
+      <button onclick="minorScale(5)">D</button>
+      <button onclick="minorScale(6)">D#</button>
+      <button onclick="minorScale(7)">E</button>
+      <button onclick="minorScale(8)">F</button>
+      <button onclick="minorScale(9)">F#</button>
+      <button onclick="minorScale(10)">G</button>
+      <button onclick="minorScale(11)">G#</button>
+      <button onclick="minorScale(12)">A</button>
+    </div>
+
+  </body>
+</html>

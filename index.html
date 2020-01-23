@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <title>title</title>
-    <style type="text/css"> </style>
+    <style type="text/css">
+      #code {
+          width: 300px;
+          height: 300px;
+      }
+    </style>
     <script defer src="synth.js"></script>
   </head>
 
@@ -69,20 +74,26 @@
       <button onclick="minorScale(12)">A</button>
     </div>
     <textarea id="code" onkeyup="parseCode()">
-load imm 4; add imm 0;
+jump imm 4;
+4; 0;
+
+load abs 2; add imm 0;
 add imm 6; add imm 0;
 add imm 2; add imm 0;
 add imm -2; add imm 0;
 
-load imm 9; add imm 0;
+add imm -1; add imm 0;
 add imm -1; add imm 0;
 add imm -2; add imm 0;
 add imm -2; add imm 0;
 
-jump imm 0;
+add imm 2;
+store imm 2;
+jump imm 4;
     </textarea>
     <button id="startMachine">Start Machine</button>
     <button id="stepMachine">Step Machine</button>
+    <button id="autoplay">Start Autoplay</button>
     <div id="registerA"></div>
     <ol start="0" id="memory">
     </ol>

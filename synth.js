@@ -79,7 +79,7 @@ const ADDR_MODES = [
 ];
 
 function decode(instr) {
-    return [INSTRUCTIONS[instr >> 4], ADDR_MODES[instr & 4]];
+    return [INSTRUCTIONS[instr >> 4], ADDR_MODES[instr & 0xF]];
 }
 
 function encode(text) {
@@ -160,7 +160,7 @@ class Machine {
     }
     setA(val) {
         this.a = val;
-        this.aNode.innerText = val;
+        this.aNode.innerText = `Register A: ${val}`;
     }
 
     reset() {
@@ -253,6 +253,21 @@ document.getElementById("startMachine").onclick = startMachine;
 
 document.getElementById("stepMachine").onclick = function() {
     machine.step();
+}
+
+let autoplay = null;
+
+document.getElementById("autoplay").onclick = function() {
+    if (autoplay) {
+        this.innerText = "Start Autoplay";
+        clearInterval(autoplay);
+        autoplay = null;
+    } else {
+        this.innerText = "Stop Autoplay";
+        autoplay = setInterval(function () {
+            machine.step();
+        }, 150);
+    }
 }
 
 startMachine();

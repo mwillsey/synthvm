@@ -68,6 +68,15 @@
       <button onclick="minorScale(11)">G#</button>
       <button onclick="minorScale(12)">A</button>
     </div>
+    <textarea id="code" onkeyup="parseCode()">
+load imm 4; add imm 0;
+add imm 6; add imm 0;
+add imm 2; add imm 0;
+add imm -2; add imm 0;
+    </textarea>
+    <button id="startMachine">Start Machine</button>
+    <button id="stepMachine">Step Machine</button>
+    <div id="registerA"></div>
     <ol start="0" id="memory">
     </ol>
 
